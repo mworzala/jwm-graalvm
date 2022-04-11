@@ -1,0 +1,40 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'org.graalvm.buildtools.native' version '0.9.4'
+    id 'com.github.johnrengelman.shadow' version '7.1.2'
+}
+
+group 'com.example'
+version '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'io.github.humbleui:jwm:0.4.1'
+    implementation 'io.github.humbleui:skija-macos-arm64:0.100.0'
+
+}
+
+application {
+    mainClass = 'com.example.jwm.demo.Main'
+}
+
+nativeBuild {
+
+    debug = true
+    verbose = true
+    sharedLibrary = false
+
+    configurationFileDirectories.from(file('/Users/matt/dev/projects/jwm/jwm-graalvm/src/main/resources/META-INF/native-image/com.example.jwm.demo')) // Adds a native image configuration file directory, containing files like reflection configuration
+
+    // Runtime options
+//    runtimeArgs.add('--help')
+
+    // Development options
+//    agent = true
+
+    useFatJar = true
+}

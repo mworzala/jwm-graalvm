@@ -1,0 +1,15 @@
+{
+  "resources":{
+  "includes":[
+    {
+      "pattern":"\\Qio/github/humbleui/skija/macos/arm64/libskija_arm64.dylib\\E"
+    }, 
+    {
+      "pattern":"\\Qio/github/humbleui/skija/macos/arm64/skija.version\\E"
+    }, 
+    {
+      "pattern":"\\Qlibjwm_arm64.dylib\\E"
+    }
+  ]},
+  "bundles":[]
+}
